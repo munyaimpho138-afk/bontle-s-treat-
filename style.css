@@ -202,7 +202,7 @@ body {
 .hero {
     height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
-                url('Walnut-Carrot-Cake-Recipe-3.jpg') center/cover;
+                url('https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=1200&h=800&fit=crop%27') center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -739,4 +739,5 @@ body {
     .menu-items {
         grid-template-columns: 1fr;
     }
+
 }
