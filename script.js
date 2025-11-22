@@ -224,3 +224,66 @@ window.addEventListener('scroll', () => {
         navbar.style.boxShadow = 'none';
     }
 });
+// Update the addToCart function to use appropriate images for each cake
+function addToCart(id, name, price) {
+    const existingItem = cart.find(item => item.id === id);
+    
+    // Get appropriate image based on cake ID
+    const imageUrls = {
+        '1': 'https://images.unsplash.com/photo-1559620192-032c4bc4674e?w=100&h=100&fit=crop',
+        '2': 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=100&h=100&fit=crop',
+        '3': 'https://images.unsplash.com/photo-1535254979304-65ea2a7f7d6c?w=100&h=100&fit=crop',
+        '4': 'https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=100&h=100&fit=crop',
+        '5': 'https://images.unsplash.com/photo-1586788680434-30d324b2d46f?w=100&h=100&fit=crop',
+        '6': 'https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=100&h=100&fit=crop',
+        '7': 'https://images.unsplash.com/photo-1515488042367-5b51a7b593e9?w=100&h=100&fit=crop',
+        '8': 'https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=100&h=100&fit=crop',
+        '9': 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=100&h=100&fit=crop',
+        '10': 'https://images.unsplash.com/photo-1571115177098-24d42c4c0ba0?w=100&h=100&fit=crop',
+        '11': 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=100&h=100&fit=crop',
+        '12': 'https://images.unsplash.com/photo-1505976378723-9726b54e9bb9?w=100&h=100&fit=crop'
+    };
+    
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            id,
+            name,
+            price,
+            quantity: 1,
+            image: imageUrls[id] || 'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=100&h=100&fit=crop'
+        });
+    }
+    
+    updateCart();
+    showNotification(`${name} added to cart!`);
+}
+
+// Update the renderCartItems function to use the specific cake images
+function renderCartItems() {
+    cartItems.innerHTML = '';
+    
+    if (cart.length === 0) {
+        cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
+        return;
+    }
+    
+    cart.forEach(item => {
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+            <div class="cart-item-image">
+                <img src="${item.image}" alt="${item.name}">
+            </div>
+            <div class="cart-item-details">
+                <div class="cart-item-name">${item.name}</div>
+                <div class="cart-item-price">R${item.price.toFixed(2)} × ${item.quantity}</div>
+            </div>
+            <button class="cart-item-remove" onclick="removeFromCart('${item.id}')">
+                <i class="fas fa-trash"></i>
+            </button>
+        `;
+        cartItems.appendChild(cartItem);
+    });
+}
