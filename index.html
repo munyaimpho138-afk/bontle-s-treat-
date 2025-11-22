@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bontle's Kitchen Dessert - Premium Cakes & Treats</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-birthday-cake"></i>
+                Bontle's Treats
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#menu">Our Cakes</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#booking">Booking</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#cart" class="cart-icon" id="cartIcon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cake Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be added here dynamically -->
+        </div>
+        <div class="cart-total">
+            Total: R<span id="cartTotal">0.00</span>
+        </div>
+        <button class="btn btn-primary checkout-btn">Proceed to Checkout</button>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Bontle's Kitchen Dessert</h1>
+            <p>Handcrafted Cakes & Sweet Treats Made with Love</p>
+            <div class="hero-buttons">
+                <a href="#menu" class="btn btn-primary">View Our Cakes</a>
+                <a href="#booking" class="btn btn-secondary">Order Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Cakes Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">Our Delicious Cakes</h2>
+            <div class="menu-filters">
+                <button class="filter-btn active" data-filter="all">All Cakes</button>
+                <button class="filter-btn" data-filter="birthday">Birthday Cakes</button>
+                <button class="filter-btn" data-filter="wedding">Wedding Cakes</button>
+                <button class="filter-btn" data-filter="cupcakes">Cupcakes</button>
+                <button class="filter-btn" data-filter="special">Special Occasions</button>
+            </div>
+            <div class="menu-items">
+                <!-- Birthday Cake 1 -->
+                <div class="menu-item" data-category="birthday">
+                    <div class="item-image">
+                        <img src="C:\Webpages\Cakes\Chocolate-Dream-Cake-with-Vanilla-Frosting-11-1024x1536.jpg" height="180px" width="100%" alt="Chocolate Birthday Cake">
+                    </div>
+                    <div class="item-info">
+                        <h3>Chocolate Dream Cake</h3>
+                        <p>Rich chocolate cake with creamy chocolate frosting and sprinkles</p>
+                        <div class="item-price">
+                            <span class="price">R299.99</span>
+                            <button class="add-to-cart" data-id="1" data-name="Chocolate Dream Cake" data-price="299.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Birthday Cake 2 -->
+                <div class="menu-item" data-category="birthday">
+                    <div class="item-image">
+                        <img src="C:\Webpages\Cakes\My-best-Vanilla-Cake_0.webp" height="210px" width="100%" alt="Vanilla Birthday Cake">
+                    </div>
+                    <div class="item-info">
+                        <h3>Vanilla Celebration Cake</h3>
+                        <p>Fluffy vanilla cake with buttercream frosting and fresh flowers</p>
+                        <div class="item-price">
+                            <span class="price">R279.99</span>
+                            <button class="add-to-cart" data-id="2" data-name="Vanilla Celebration Cake" data-price="279.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Wedding Cake -->
+                <div class="menu-item" data-category="wedding">
+                    <div class= "em-image">
+                        <img src="C:\Webpages\Cakes\weddingcake-15.webp" height="210px" width="100%" alt="Elegant Wedding Cake">
+                    </div>
+                        
+                    <div class="item-info">
+                        <h3>Elegant Wedding Cake</h3>
+                        <p>Three-tier vanilla cake with delicate floral decorations</p>
+                        <div class="item-price">
+                            <span class="price">R899.99</span>
+                            <button class="add-to-cart" data-id="3" data-name="Elegant Wedding Cake" data-price="899.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Cupcakes -->
+                <div class="menu-item" data-category="cupcakes">
+                    <div class="item-image">
+                        <img src="C:\Webpages\Cakes\six-assorted-cup-cakes-21326157.webp" alt="Assorted Cupcakes">
+                    </div>
+                    <div class="item-info">
+                        <h3>Assorted Cupcakes (6)</h3>
+                        <p>Six delicious cupcakes with various flavors and toppings</p>
+                        <div class="item-price">
+                            <span class="price">R149.99</span>
+                            <button class="add-to-cart" data-id="4" data-name="Assorted Cupcakes (6)" data-price="149.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Special Occasion -->
+                <div class="menu-item" data-category="special">
+                    <div class="item-image">
+                        <img src="C:\Webpages\Cakes\Red-Velvet-Cake-with-Cream-Cheese-Frosting-1-scaled.png" alt="Red Velvet Cake">
+                    </div>
+                    <div class="item-info">
+                        <h3>Red Velvet Delight</h3>
+                        <p>Classic red velvet cake with cream cheese frosting</p>
+                        <div class="item-price">
+                            <span class="price">R329.99</span>
+                            <button class="add-to-cart" data-id="5" data-name="Red Velvet Delight" data-price="329.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Special Occasion 2 -->
+                <div class="menu-item" data-category="special">
+                    <div class="item-image">
+                        <img src="C:\Webpages\Cakes\Walnut-Carrot-Cake-Recipe-3.jpg" alt="Carrot Cake">
+                    </div>
+                    <div class="item-info">
+                        <h3>Carrot Cake Special</h3>
+                        <p>Moist carrot cake with walnuts and cream cheese frosting</p>
+                        <div class="item-price">
+                            <span class="price">R269.99</span>
+                            <button class="add-to-cart" data-id="6" data-name="Carrot Cake Special" data-price="269.99">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Bontle's Kitchen Dessert</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>Founded in 2020, Bontle's Kitchen Dessert started as a small home-based bakery with a passion for creating delicious, beautifully crafted cakes. What began as baking for family and friends has grown into a beloved local business serving the Thohoyandou community and beyond.</p>
+                    
+                    <h3>Our Philosophy</h3>
+                    <p>We believe that every celebration deserves a special cake. That's why we use only the finest ingredients, from rich Belgian chocolate to fresh fruits and pure vanilla. Each cake is handcrafted with attention to detail and a whole lot of love.</p>
+                    
+                    <h3>Location</h3>
+                    <p>We are proudly located in Thohoyandou, Polokwane, South Africa - serving our local community with sweet treats for all occasions.</p>
+                    
+                    <div class="features">
+                        <div class="feature">
+                            <i class="fas fa-heart"></i>
+                            <span>Made with Love</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span>Fresh Ingredients</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <span>Quality Guaranteed</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-truck"></i>
+                            <span>Local Delivery</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=500&h=600&fit=crop" alt="Bontle's Kitchen Dessert">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2 class="section-title">Book Your Cake</h2>
+            <p class="section-subtitle">Place your order for collection or delivery</p>
+            
+            <div class="booking-content">
+                <div class="booking-info">
+                    <h3>How to Order</h3>
+                    <ul>
+                        <li><strong>Step 1:</strong> Browse our cake selection</li>
+                        <li><strong>Step 2:</strong> Add your favorite cakes to cart</li>
+                        <li><strong>Step 3:</strong> Fill out the booking form</li>
+                        <li><strong>Step 4:</strong> We'll contact you to confirm details</li>
+                        <li><strong>Step 5:</strong> Enjoy your delicious cake!</li>
+                    </ul>
+                    
+                    <div class="delivery-info">
+                        <h4>Delivery Information</h4>
+                        <p>We offer delivery within Thohoyandou and surrounding areas. Delivery fee starts at R30 depending on location.</p>
+                        <p>Orders should be placed at least 48 hours in advance for custom cakes.</p>
+                    </div>
+                </div>
+                
+                <form class="booking-form" id="bookingForm">
+                    <h3>Order Details</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Your Phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryDate">Preferred Delivery/Collection Date</label>
+                        <input type="date" id="deliveryDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryTime">Preferred Time</label>
+                        <input type="time" id="deliveryTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="orderType">Order Type</label>
+                        <select id="orderType" required>
+                            <option value="">Select Option</option>
+                            <option value="collection">Collection</option>
+                            <option value="delivery">Delivery</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryAddress" id="addressLabel" style="display: none;">Delivery Address</label>
+                        <input type="text" id="deliveryAddress" placeholder="Delivery Address" style="display: none;">
+                    </div>
+                    <div class="form-group">
+                        <label for="specialInstructions">Special Instructions</label>
+                        <textarea id="specialInstructions" placeholder="Any special requests or dietary requirements?" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Order</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>079 071 4775</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>mbalipfarelo@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Address</h4>
+                            <p>Thohoyandou, Polokwane<br>South Africa</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
+                            <p>Saturday: 9:00 AM - 4:00 PM</p>
+                            <p>Sunday: 10:00 AM - 2:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Bontle's Kitchen Dessert</h3>
+                    <p>Handcrafted cakes and sweet treats made with love in Thohoyandou.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#menu">Our Cakes</a></li>
+                        <li><a href="#booking">Order Now</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> 079 071 4775</p>
+                    <p><i class="fas fa-envelope"></i> mbalipfarelo@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Thohoyandou, Polokwane, SA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Bontle's Kitchen Dessert. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
